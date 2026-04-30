@@ -557,6 +557,12 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
 .chapter.sec-a .cta-inline{background:#1A1A1A}
 .chapter.sec-a .domande-section{background:#1A1A1A}
 .chapter.sec-a .ing-table thead th{background:#1A1A1A}
+ 
+.chapter.sec-a .prod-name{color:#F5F2EC}
+.chapter.sec-a .prod-target{color:rgba(245,242,236,0.5)}
+.chapter.sec-a .prod-feat{color:rgba(245,242,236,0.55);border-top-color:rgba(255,255,255,0.07)}
+.chapter.sec-a .prod-feat strong{color:#F5F2EC}
+.chapter.sec-a .prod-badge{background:var(--gold);color:#1A1A1A}
 </style>
 </head>
 <body>
@@ -1124,6 +1130,14 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
     <h2>Le domande che<br>Daniela sente ogni giorno</h2>
     <p>Raccolte qui le risposte più comuni dalla consulenza — per darti subito un orientamento chiaro.</p>
  
+    <div style="background:#FFFFFF;border:2px solid #C0392B;border-radius:14px;padding:22px 20px;margin:0 0 32px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div style="width:28px;height:28px;background:#C0392B;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:900;color:#fff;line-height:1">!</div>
+        <span style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:#C0392B">Importante — leggere prima di tutto</span>
+      </div>
+      <p style="font-size:15px;font-weight:600;color:#C0392B;line-height:1.6;margin:0">Nessun integratore va assunto "per moda" o per sentito dire. Prima di prendere qualsiasi integratore per i capelli, è indispensabile mostrare gli esami del sangue al proprio medico. Solo una carenza accertata — ferritina, vitamina D, zinco, B12 — giustifica l'integrazione specifica. Automedicarsi senza una diagnosi è inutile nel migliore dei casi, controproducente nel peggiore.</p>
+    </div>
+ 
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-btn" onclick="toggleFaq(this)">Quanto tempo serve per vedere risultati?<div class="faq-icon">+</div></button>
@@ -1242,3 +1256,4 @@ causeData.labels.forEach((l,i)=>{
 </script>
 </body>
 </html>
+ 
