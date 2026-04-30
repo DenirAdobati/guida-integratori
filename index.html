@@ -34,6 +34,29 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 }
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dark);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
  
+/* ── ALTERNATING SECTIONS ── */
+.sec-a{background:#0F0F0F}
+.sec-b{background:#1A1A1A}
+.sec-b .alert{background:rgba(234,179,10,0.09)}
+.sec-b .cond-card{background:#252525;border-color:rgba(255,255,255,0.08)}
+.sec-b .cond-card-header{border-bottom-color:rgba(255,255,255,0.07)}
+.sec-b .cond-ico{background:#2E2E2E}
+.sec-b .ing-table thead th{background:#2E2E2E}
+.sec-b .ing-table td{border-bottom-color:rgba(255,255,255,0.07)}
+.sec-b .stat-box{background:#252525}
+.sec-b .dosage-bar{background:rgba(255,255,255,0.1)}
+.sec-b .prod-card{background:#252525}
+.sec-b .prod-card.featured{border-color:var(--gold)}
+.sec-b .faq-item{border-bottom-color:rgba(255,255,255,0.09)}
+.sec-b .check-item{border-bottom-color:rgba(255,255,255,0.07)}
+.sec-b .domande-section{background:#252525}
+.sec-b .domande-input{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12)}
+.sec-b .tl-line{background:rgba(234,179,10,0.25)}
+.sec-b .tl-dot{background:#1A1A1A}
+.sec-b .phase-b{background:#2E2E2E}
+.sec-b .phase-c{background:#3A3A3A}
+.sec-b .divider{background:rgba(255,255,255,0.09)}
+ 
 /* ── FLOATING CTA ── */
 .float-cta{
   position:fixed;bottom:20px;right:16px;z-index:999;
@@ -52,20 +75,22 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
 .cover{
   min-height:100svh;
   background:var(--dark);
-  display:flex;flex-direction:column;justify-content:flex-end;
+  display:flex;flex-direction:column;justify-content:flex-end;align-items:center;
   padding:0 20px 48px;
   border-bottom:1px solid rgba(255,255,255,0.06);
+  text-align:center;
 }
 .cover-eyebrow{
   font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
   color:var(--gold);margin-bottom:16px;
-  display:flex;align-items:center;gap:8px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
 }
 .cover-eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--gold)}
 .cover h1{
   font-size:clamp(36px,9vw,72px);
   font-weight:900;line-height:1.05;
   color:var(--text);margin-bottom:20px;letter-spacing:-0.02em;
+  max-width:700px;
 }
 .cover h1 span{color:var(--gold)}
 .cover-sub{
@@ -73,7 +98,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   max-width:520px;margin-bottom:40px;line-height:1.7;
 }
 .cover-meta{
-  display:flex;flex-wrap:wrap;gap:12px;
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
 }
 .cover-pill{
   display:inline-flex;align-items:center;gap:6px;
@@ -85,10 +110,25 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
 .cover-pill strong{color:var(--text);font-weight:700}
  
 /* ── ARTICLE BODY ── */
-.article{max-width:680px;margin:0 auto;padding:0 20px}
+.article{max-width:680px;margin:0 auto;padding:0}
  
 /* ── CHAPTER ── */
-.chapter{padding:56px 0 0}
+.chapter{
+  padding:56px 20px 56px;
+}
+.chapter.sec-a{background:#0F0F0F}
+.chapter.sec-b{background:#1A1A1A}
+.chapter.sec-a{background:#0F0F0F}
+.chapter.sec-b{background:#1A1A1A}
+.chapter.sec-a .stat-box,.chapter.sec-a .cond-card{background:#1A1A1A}
+.chapter.sec-b .stat-box,.chapter.sec-b .cond-card,.chapter.sec-b .prod-card,.chapter.sec-b .domande-section{background:#252525}
+.chapter.sec-b .cond-ico,.chapter.sec-b .ing-table thead th{background:#2E2E2E}
+.chapter.sec-b .ing-table td,.chapter.sec-b .cond-card-header,.chapter.sec-b .faq-item,.chapter.sec-b .check-item,.chapter.sec-b .prod-feat{border-color:rgba(255,255,255,0.09)}
+.chapter.sec-b .dosage-bar{background:rgba(255,255,255,0.1)}
+.chapter.sec-b .tl-dot{background:#1A1A1A}
+.chapter.sec-b .phase-b{background:#2E2E2E}
+.chapter.sec-b .phase-c{background:#3A3A3A}
+ 
 .chapter-num{
   font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--gold);margin-bottom:12px;
@@ -106,7 +146,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
 .chapter p:last-child{margin-bottom:0}
  
 /* ── DIVIDER ── */
-.divider{height:1px;background:rgba(255,255,255,0.07);margin:48px 0}
+.divider{display:none}
  
 /* ── ALERT BOX ── */
 .alert{
@@ -372,6 +412,28 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   .break-cream{margin:56px 0;border-radius:var(--r)}
   .float-cta{right:32px;bottom:32px}
 }
+ 
+.chapter.sec-b .stat-box{background:#252525}
+.chapter.sec-b .cond-card{background:#252525;border-color:rgba(255,255,255,0.09)}
+.chapter.sec-b .cond-card-header{border-bottom-color:rgba(255,255,255,0.08)}
+.chapter.sec-b .cond-ico{background:#2E2E2E}
+.chapter.sec-b .prod-card{background:#252525}
+.chapter.sec-b .prod-card.featured{border-color:var(--gold)}
+.chapter.sec-b .ing-table thead th{background:#2E2E2E}
+.chapter.sec-b .ing-table td{border-bottom-color:rgba(255,255,255,0.08)}
+.chapter.sec-b .dosage-bar{background:rgba(255,255,255,0.1)}
+.chapter.sec-b .faq-item{border-bottom-color:rgba(255,255,255,0.09)}
+.chapter.sec-b .check-item{border-bottom-color:rgba(255,255,255,0.08)}
+.chapter.sec-b .tl-dot{background:#1A1A1A}
+.chapter.sec-b .phase-b{background:#2E2E2E}
+.chapter.sec-b .phase-c{background:#383838}
+.chapter.sec-b .domande-section{background:#252525}
+.chapter.sec-b .domande-input{background:rgba(255,255,255,0.07)}
+.chapter.sec-a .stat-box{background:#1A1A1A}
+.chapter.sec-a .cond-card{background:#1A1A1A;border-color:rgba(255,255,255,0.09)}
+.chapter.sec-a .cond-ico{background:#252525}
+.chapter.sec-a .prod-card{background:#1A1A1A}
+.chapter.sec-a .cta-inline{background:#1A1A1A}
 </style>
 </head>
 <body>
@@ -395,11 +457,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
 </div>
  
 <!-- ARTICLE -->
-<div style="max-width:720px;margin:0 auto">
-<div class="article">
  
   <!-- INTRO -->
-  <div class="chapter">
+  <div class="chapter sec-a">
     <div class="chapter-num">01 · Introduzione</div>
     <h2>Prima di tutto: cos'è davvero un integratore?</h2>
     <p>Un integratore non è un farmaco. Non cura le malattie, non blocca l'alopecia genetica avanzata e non produce magie in poche settimane. È un <strong>supporto nutrizionale</strong>: fornisce al follicolo pilifero le sostanze che la dieta, da sola, non sempre garantisce in quantità sufficiente.</p>
@@ -414,7 +474,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- CICLO -->
-  <div class="chapter">
+  <div class="chapter sec-b">
     <div class="chapter-num">02 · La biologia</div>
     <h2>Il ciclo del capello:<br>tutto parte da qui</h2>
     <p>Per capire quando e perché un integratore funziona, devi prima capire come vive un capello. Il follicolo pilifero segue un ciclo in tre fasi, che si ripete per tutta la vita.</p>
@@ -456,7 +516,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- QUANDO SERVE / NON SERVE -->
-  <div class="chapter">
+  <div class="chapter sec-a">
     <div class="chapter-num">03 · Quando funziona</div>
     <h2>Quando un integratore<br>può aiutarti davvero</h2>
     <p>La risposta dipende dalla causa. Gli integratori funzionano quando il problema è nutrizionale, stagionale, legato allo stress o a fasi ormonali. Non funzionano quando il problema è genetico avanzato o patologico.</p>
@@ -489,7 +549,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- TIMELINE -->
-  <div class="chapter">
+  <div class="chapter sec-b">
     <div class="chapter-num">04 · I tempi</div>
     <h2>Quanto tempo serve<br>per vedere risultati?</h2>
     <p>Il ciclo biologico del capello richiede mesi. È impossibile vedere cambiamenti in 2 settimane — chi te lo promette sta mentendo. Ecco una timeline realistica.</p>
@@ -530,28 +590,24 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
     </div>
   </div>
  
-</div><!-- /article -->
- 
-<!-- BREAK CREAM: per ogni condizione -->
-<div class="break-cream">
-<div style="max-width:680px;margin:0 auto;padding:0 4px">
-  <div class="chapter-num" style="margin-bottom:12px">05 · Per ogni condizione</div>
-  <h2 style="font-size:clamp(24px,5.5vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:16px">L'integratore giusto<br>per il tuo problema</h2>
-  <p style="font-size:16px;color:var(--ink-mid);margin-bottom:32px;line-height:1.7">Non esiste una formula universale. Ogni situazione ha bisogno di ingredienti specifici. Qui trovi le principali casistiche con i nutrienti più indicati.</p>
+<div class="chapter sec-a">
+<div class="chapter-num">05 · Per ogni condizione</div>
+  <h2 style="font-size:clamp(24px,5.5vw,36px);font-weight:800;line-height:1.1;letter-spacing:-0.02em;color:var(--text);margin-bottom:16px">L'integratore giusto<br>per il tuo problema</h2>
+  <p style="font-size:16px;color:var(--text-muted);margin-bottom:32px;line-height:1.7">Non esiste una formula universale. Ogni situazione ha bisogno di ingredienti specifici. Qui trovi le principali casistiche con i nutrienti più indicati.</p>
  
   <div class="cond-section">
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">🍂</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >🍂</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Caduta stagionale e da stress</div>
-          <div class="cond-sub" style="color:var(--ink-light)">La più comune · Autunno e primavera</div>
+          <div class="cond-title" >Caduta stagionale e da stress</div>
+          <div class="cond-sub" >La più comune · Autunno e primavera</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">Il cambio di luce e temperatura accelera il passaggio in fase telogen. Lo stress psicofisico amplifica il fenomeno attivando il cortisolo, che interferisce col ciclo del follicolo.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >Il cambio di luce e temperatura accelera il passaggio in fase telogen. Lo stress psicofisico amplifica il fenomeno attivando il cortisolo, che interferisce col ciclo del follicolo.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">Biotina (B7)</span>
           <span class="pill">L-Ornitina</span>
@@ -559,23 +615,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Vitamina B5 + B6</span>
           <span class="pill">Antiossidanti</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Prodotti di riferimento</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:#E8E3DA">Bioscalin Nova Genina — L-ornitina + Reishi + Biotina</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">AnnurMets Hair — Procianidine B2 + Zinco + Selenio</div>
+        <div class="cond-note-title" >Prodotti di riferimento</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Bioscalin Nova Genina — L-ornitina + Reishi + Biotina</div>
+        <div class="prod-line" style="color:var(--ink-mid)">AnnurMets Hair — Procianidine B2 + Zinco + Selenio</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">🔬</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >🔬</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Diradamento e alopecia iniziale</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Cause androgenetiche o metaboliche · DHT-correlato</div>
+          <div class="cond-title" >Diradamento e alopecia iniziale</div>
+          <div class="cond-sub" >Cause androgenetiche o metaboliche · DHT-correlato</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">Il DHT miniaturizza progressivamente i follicoli. La fase anagen si accorcia: i capelli crescono più sottili, più corti, fino a scomparire. La diagnosi precoce è fondamentale.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >Il DHT miniaturizza progressivamente i follicoli. La fase anagen si accorcia: i capelli crescono più sottili, più corti, fino a scomparire. La diagnosi precoce è fondamentale.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">Mela Annurca IGP</span>
           <span class="pill">Procianidine B2</span>
@@ -584,23 +640,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Rame</span>
           <span class="pill">Biotina</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Prodotti di riferimento</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:#E8E3DA">AnnurMets Hair 60 cpr — Studi Univ. Federico II Napoli, risultati da 60 gg</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">AnnurMets Hair Forte — Profilo minerale completo</div>
+        <div class="cond-note-title" >Prodotti di riferimento</div>
+        <div class="prod-line" style="color:var(--ink-mid)">AnnurMets Hair 60 cpr — Studi Univ. Federico II Napoli, risultati da 60 gg</div>
+        <div class="prod-line" style="color:var(--ink-mid)">AnnurMets Hair Forte — Profilo minerale completo</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">🌸</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >🌸</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Menopausa e over 45</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Calo estrogenico · Profilo ormonale femminile</div>
+          <div class="cond-title" >Menopausa e over 45</div>
+          <div class="cond-sub" >Calo estrogenico · Profilo ormonale femminile</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">Con il calo degli estrogeni, l'anagen si accorcia e i follicoli diventano più sensibili al DHT. I capelli appaiono più sottili, meno voluminosi. Servono ingredienti specifici per il profilo ormonale post-45.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >Con il calo degli estrogeni, l'anagen si accorcia e i follicoli diventano più sensibili al DHT. I capelli appaiono più sottili, meno voluminosi. Servono ingredienti specifici per il profilo ormonale post-45.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">BioEquolo</span>
           <span class="pill">Isoflavoni di soia fermentata</span>
@@ -608,22 +664,22 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Biotina</span>
           <span class="pill">Antiossidanti</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Prodotti di riferimento</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">Bioscalin Tricoage 45+ — Unico formulato per calo estrogenico, tecnologia R-Plus</div>
+        <div class="cond-note-title" >Prodotti di riferimento</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Bioscalin Tricoage 45+ — Unico formulato per calo estrogenico, tecnologia R-Plus</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">⚡</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >⚡</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Anticaduta uomo</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Alopecia androgenetica · Metabolismo DHT</div>
+          <div class="cond-title" >Anticaduta uomo</div>
+          <div class="cond-sub" >Alopecia androgenetica · Metabolismo DHT</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">Serve stimolare l'energia cellulare del follicolo e migliorare la microcircolazione del cuoio capelluto. Formule specifiche con complessi energetici sono più efficaci delle formule generiche.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >Serve stimolare l'energia cellulare del follicolo e migliorare la microcircolazione del cuoio capelluto. Formule specifiche con complessi energetici sono più efficaci delle formule generiche.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">Arginina</span>
           <span class="pill">Caffeina</span>
@@ -632,22 +688,22 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Biotina</span>
           <span class="pill">Zinco</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Prodotti di riferimento</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">Bioscalin Energy Uomo — Complesso ATP-3 + Caffeina per microcircolazione</div>
+        <div class="cond-note-title" >Prodotti di riferimento</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Bioscalin Energy Uomo — Complesso ATP-3 + Caffeina per microcircolazione</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">💎</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >💎</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Capelli fragili e sfibrati</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Struttura debole · Doppie punte · Spezzatura</div>
+          <div class="cond-title" >Capelli fragili e sfibrati</div>
+          <div class="cond-sub" >Struttura debole · Doppie punte · Spezzatura</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">La struttura della cheratina è compromessa. I ponti disolfuro tra le molecole di cisteina si indeboliscono. Servono aminoacidi solforati specifici, non solo vitamine generiche.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >La struttura della cheratina è compromessa. I ponti disolfuro tra le molecole di cisteina si indeboliscono. Servono aminoacidi solforati specifici, non solo vitamine generiche.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">N-Acetilcisteina</span>
           <span class="pill">MSM (metilsulfonilmetano)</span>
@@ -655,22 +711,22 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Vitamina D3</span>
           <span class="pill">Niacina</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Prodotti di riferimento</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">Bioscalin Total Care — Aminoacidi solforati + Silice bambù + Fisetina, rilascio graduale</div>
+        <div class="cond-note-title" >Prodotti di riferimento</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Bioscalin Total Care — Aminoacidi solforati + Silice bambù + Fisetina, rilascio graduale</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">🌿</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >🌿</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Dermatite seborroica</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Cuoio capelluto infiammato · Sebo alterato · Malassezia</div>
+          <div class="cond-title" >Dermatite seborroica</div>
+          <div class="cond-sub" >Cuoio capelluto infiammato · Sebo alterato · Malassezia</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">La Malassezia furfur provoca infiammazione, desquamazione e produzione sebacea alterata. Gli integratori supportano — ma non sostituiscono — il trattamento topico specifico.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti chiave</div>
+        <p class="cond-desc" >La Malassezia furfur provoca infiammazione, desquamazione e produzione sebacea alterata. Gli integratori supportano — ma non sostituiscono — il trattamento topico specifico.</p>
+        <div class="cond-note-title" >Ingredienti chiave</div>
         <div class="pill-row">
           <span class="pill">Zinco (regola il sebo)</span>
           <span class="pill">Omega-3 EPA+DHA</span>
@@ -678,23 +734,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Selenio</span>
           <span class="pill">CoQ10</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Nota importante</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:#E8E3DA">Sempre da abbinare a shampoo specifici (piroctone olamina, zinco piritione)</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">Lo zinco inibisce l'enzima chiave della secrezione sebacea</div>
+        <div class="cond-note-title" >Nota importante</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Sempre da abbinare a shampoo specifici (piroctone olamina, zinco piritione)</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Lo zinco inibisce l'enzima chiave della secrezione sebacea</div>
       </div>
     </div>
  
-    <div class="cond-card" style="background:#fff;border-color:#E8E3DA">
-      <div class="cond-card-header" style="border-bottom-color:#E8E3DA">
-        <div class="cond-ico" style="background:#F5F0E8">🔴</div>
+    <div class="cond-card" >
+      <div class="cond-card-header" >
+        <div class="cond-ico" >🔴</div>
         <div class="cond-head-text">
-          <div class="cond-title" style="color:var(--ink)">Psoriasi del cuoio capelluto</div>
-          <div class="cond-sub" style="color:var(--ink-light)">Patologia autoimmune · Richiede diagnosi medica</div>
+          <div class="cond-title" >Psoriasi del cuoio capelluto</div>
+          <div class="cond-sub" >Patologia autoimmune · Richiede diagnosi medica</div>
         </div>
       </div>
       <div class="cond-body">
-        <p class="cond-desc" style="color:var(--ink-mid)">Placche spesse e argentee, prurito intenso, infiammazione cronica. L'integrazione è un supporto al trattamento medico principale — non una terapia autonoma. Sempre sotto controllo dermatologico.</p>
-        <div class="cond-note-title" style="color:var(--ink-light)">Ingredienti di supporto</div>
+        <p class="cond-desc" >Placche spesse e argentee, prurito intenso, infiammazione cronica. L'integrazione è un supporto al trattamento medico principale — non una terapia autonoma. Sempre sotto controllo dermatologico.</p>
+        <div class="cond-note-title" >Ingredienti di supporto</div>
         <div class="pill-row">
           <span class="pill">Omega-3 (EPA+DHA)</span>
           <span class="pill">Vitamina D3</span>
@@ -702,13 +758,13 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
           <span class="pill">Selenio</span>
           <span class="pill">Zinco</span>
         </div>
-        <div class="cond-note-title" style="color:var(--ink-light)">Attenzione</div>
-        <div class="prod-line" style="color:var(--ink-mid);border-bottom-color:transparent">Gli Omega-3 riducono infiammazione e desquamazione, ma non sostituiscono la terapia medica</div>
+        <div class="cond-note-title" >Attenzione</div>
+        <div class="prod-line" style="color:var(--ink-mid)">Gli Omega-3 riducono infiammazione e desquamazione, ma non sostituiscono la terapia medica</div>
       </div>
     </div>
  
     <!-- CTA dentro l'articolo -->
-    <div class="cta-inline" id="contattaci" style="background:var(--ink);border-color:rgba(234,179,10,0.3)">
+    <div class="cta-inline" id="contattaci" style="background:var(--dark2);border-color:rgba(234,179,10,0.3)">
       <h3>Non sai quale fa per te?</h3>
       <p>Daniela analizza la tua situazione specifica durante la consulenza tricologica. Niente soluzioni generiche — solo quello che serve davvero alla tua chioma.</p>
       <a href="#typeform-placeholder" class="cta-btn">Come possiamo aiutarti →</a>
@@ -716,12 +772,13 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
  
   </div>
 </div>
-</div><!-- /break-cream -->
+</div>
+</div>
  
 <div class="article">
  
   <!-- INGREDIENTI -->
-  <div class="chapter">
+  <div class="chapter sec-b">
     <div class="chapter-num">06 · La scienza</div>
     <h2>Gli ingredienti:<br>cosa fanno davvero</h2>
     <p>Non tutti gli ingredienti valgono uguale. Qui trovi i principali attivi con dosaggi orientativi e il loro ruolo reale nel metabolismo del capello.</p>
@@ -833,7 +890,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- GRAFICO CAUSE -->
-  <div class="chapter">
+  <div class="chapter sec-a">
     <div class="chapter-num">07 · I dati</div>
     <h2>Cause della caduta:<br>cosa dice la ricerca</h2>
     <p>La caduta dei capelli è multifattoriale. Identificare la causa corretta è il primo passo per scegliere l'integrazione più efficace.</p>
@@ -862,7 +919,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- PRODOTTI -->
-  <div class="chapter">
+  <div class="chapter sec-b">
     <div class="chapter-num">08 · I prodotti</div>
     <h2>I principali integratori<br>sul mercato</h2>
     <p>Una panoramica comparativa sui prodotti più diffusi, con il profilo ideale di chi li usa. Non sono raccomandazioni mediche — sono orientamenti per la conversazione con il tuo specialista.</p>
@@ -918,7 +975,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- ETICHETTA -->
-  <div class="chapter">
+  <div class="chapter sec-a">
     <div class="chapter-num">09 · Come scegliere</div>
     <h2>Come leggere<br>un'etichetta</h2>
     <p>Non tutti i prodotti sono formulati allo stesso modo. Ecco cosa controllare per valutare concretamente la qualità di un integratore.</p>
@@ -939,7 +996,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- FAQ -->
-  <div class="chapter">
+  <div class="chapter sec-b">
     <div class="chapter-num">10 · Domande frequenti</div>
     <h2>Le domande che<br>Daniela sente ogni giorno</h2>
     <p>Raccolte qui le risposte più comuni dalla consulenza — per darti subito un orientamento chiaro.</p>
@@ -979,7 +1036,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- SEZIONE DOMANDE LIBERE -->
-  <div class="chapter">
+  <div class="chapter sec-a">
     <div class="chapter-num">11 · Hai una domanda?</div>
     <h2>Scrivici quello<br>che vuoi sapere</h2>
     <p>Non hai trovato risposta a quello che cercavi? Lascia la tua domanda qui sotto. Daniela o il nostro team risponderanno direttamente.</p>
@@ -1000,18 +1057,18 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--dar
   <div class="divider"></div>
  
   <!-- CTA FINALE -->
-  <div class="cta-inline" style="text-align:center;margin-bottom:0">
+  <div class="cta-inline sec-b-block" style="text-align:center;margin-bottom:0">
     <p style="font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px">Beautrì · Cologno al Serio, Bergamo</p>
     <h3 style="font-size:clamp(22px,5vw,32px)">Vuoi un percorso<br>personalizzato?</h3>
     <p>La consulenza Beautrìco parte dall'analisi del tuo cuoio capelluto — non da una risposta generica. Daniela ti indica il percorso giusto per la tua situazione specifica.</p>
     <a href="#typeform-placeholder" class="cta-btn">Come possiamo aiutarti →</a>
   </div>
  
-</div><!-- /article -->
+ 
 </div><!-- /max-width wrapper -->
  
 <!-- FOOTER -->
-<div class="footer">
+<div class="footer sec-b" style="background:#111">
   <div class="footer-logo">beau<span>trì</span></div>
   <p class="footer-note">© 2026 Beautrì · Cologno al Serio (BG) · P.IVA 04798910164<br>Le informazioni presenti in questa guida hanno finalità divulgative e non costituiscono prescrizione medica. Gli integratori non sono medicinali e non sono destinati alla diagnosi o cura di malattie. Consulta sempre un professionista della salute.</p>
 </div>
